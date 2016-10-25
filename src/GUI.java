@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -14,6 +15,9 @@ import javafx.stage.Stage;
 
 /**
  * Created by alk_ on 10/25/16.
+ *
+ * Et ei oleks default file template on siin see rida
+ * Kunagi äkki mõni kommentaar ka juurde
  */
 public class GUI extends Application {
 
@@ -27,7 +31,6 @@ public class GUI extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		grid.setPadding(new Insets(0, 10, 0, 10));
-		//grid.getColumnConstraints().add(new ColumnConstraints(0));
 		grid.getColumnConstraints().add(new ColumnConstraints(110));
 
 		vBox.getChildren().add(grid);
@@ -83,6 +86,18 @@ public class GUI extends Application {
 
 		hBox.getChildren().addAll(algo1,algo2,algo3,algo4,puhasta);
 
+		algo1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(new GridPane(),vBox,primaryStage);
+			}
+		});
+
+		GridPane test = new GridPane();
+		test.add(new Button("ehhe"),1,1);
+		vBox.getChildren().addAll(test);
+
+
 		Scene scene = new Scene(vBox, 300, 100);
 
 		primaryStage.setTitle("Kodutöö2");
@@ -93,5 +108,12 @@ public class GUI extends Application {
 	}
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public static void update(GridPane newPane, VBox vBox, Stage primaryStage){
+		vBox.getChildren().remove(vBox.getChildren().size()-1);
+		vBox.getChildren().addAll(newPane);
+		primaryStage.show();
+
 	}
 }
