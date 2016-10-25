@@ -2,7 +2,6 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -10,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
@@ -89,7 +89,7 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(new GridPane(),vBox,primaryStage);
+				update(createNewPane("test"),vBox,primaryStage);
 			}
 		});
 
@@ -102,8 +102,8 @@ public class GUI extends Application {
 
 		primaryStage.setTitle("Kodutöö2");
 		primaryStage.setScene(scene);
-		primaryStage.setHeight(300);
-		primaryStage.setWidth(1000);
+		primaryStage.setHeight(500);
+		primaryStage.setWidth(1200);
 		primaryStage.show();
 	}
 	public static void main(String[] args) {
@@ -115,5 +115,30 @@ public class GUI extends Application {
 		vBox.getChildren().addAll(newPane);
 		primaryStage.show();
 
+	}
+
+	public static GridPane createNewPane(String in){
+		GridPane grid = new GridPane();
+
+		Text txt = new Text("Lisatud\nProtsess");
+		txt.setTextAlignment(TextAlignment.CENTER);
+
+		Text txt1 = new Text("Etapp");
+		txt1.setTextAlignment(TextAlignment.CENTER);
+		grid.add(txt1,0,0);
+		grid.add(txt,1,0);
+
+
+		grid.getColumnConstraints().add(new ColumnConstraints(40));
+		grid.getColumnConstraints().add(new ColumnConstraints(60));
+
+
+		for (int i = 0; i <= 50; i++) {
+			grid.add(new Text(Integer.toString(i)),i+2,0);
+			grid.getColumnConstraints().add(new ColumnConstraints(20));
+
+		}
+
+		return grid;
 	}
 }
