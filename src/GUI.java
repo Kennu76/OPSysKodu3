@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +14,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -96,7 +101,7 @@ public class GUI extends Application {
 				//update(createNewPane(temp),vBox,primaryStage);
 			}
 		});
-		String[][] temp = {{"1;hello","A","A","B"}};
+		String[][] temp = {{"1;hello","A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}};
 		vBox.getChildren().addAll(createNewPane(temp));
 
 
@@ -128,6 +133,7 @@ public class GUI extends Application {
 
 		GridPane grid = new GridPane();
 
+
 		Text txt = new Text("Lisatud\nProtsess");
 		txt.setTextAlignment(TextAlignment.CENTER);
 
@@ -141,7 +147,10 @@ public class GUI extends Application {
 		grid.getColumnConstraints().add(new ColumnConstraints(60));
 
 		for (int i = 0; i < 50; i++) {
-			grid.add(new Text(Integer.toString(i)),i+2,0);
+			Text tempText = new Text(Integer.toString(i));
+			GridPane.setHalignment(tempText, HPos.CENTER);
+
+			grid.add(tempText,i+2,0);
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
@@ -163,6 +172,14 @@ public class GUI extends Application {
 	 */
 
 	public static GridPane addRow(String[] in,GridPane grid){
+
+		Color[] list = {Color.BLUE, Color.RED, Color.ORANGE, Color.CYAN, Color.PALEGREEN,
+				Color.SALMON, Color.GREEN, Color.YELLOW, Color.LAVENDER, Color.PINK};
+		List<String> chars = new ArrayList();
+		String[] cs = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+		chars = Arrays.asList(cs);
+
+
 		Text txt1 = new Text(in[0].split("[;]")[0]);
 		Text txt2 = new Text(in[0].split("[;]")[1]);
 
@@ -175,9 +192,11 @@ public class GUI extends Application {
 		grid.add(txt2,1,row);
 
 		for (int i = 0; i < in.length-1; i++) {
-			Rectangle rekt = new Rectangle(20,20,Color.BLUE);
+
+			Rectangle rekt = new Rectangle(20,20,list[chars.indexOf(in[i+1])]);
 			rekt.setStroke(Color.BLACK);
 			Text text = new Text(in[i+1]);
+			text.setTextAlignment(TextAlignment.CENTER);
 			StackPane pane = new StackPane();
 			pane.getChildren().addAll(rekt,text);
 
