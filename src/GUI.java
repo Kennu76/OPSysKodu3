@@ -93,11 +93,10 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				String[][] temp = {{"test"}};
-				update(createNewPane(temp),vBox,primaryStage);
+				//update(createNewPane(temp),vBox,primaryStage);
 			}
 		});
-		String[][] temp = {{"test"}};
+		String[][] temp = {{"1;hello","A","A","B"}};
 		vBox.getChildren().addAll(createNewPane(temp));
 
 
@@ -123,9 +122,10 @@ public class GUI extends Application {
 	 *Method takes some kind of input to create the graphical output noted in the sample program pictures
 	 *
 	 * That input will most likely be formatted as an array
-	 * [[metadata, 'a','a','b'....]]
+	 * [[metadata, 'a','a','b'....],[metadata,"a"..]]
 	 */
 	public static GridPane createNewPane(String[][] in){
+
 		GridPane grid = new GridPane();
 
 		Text txt = new Text("Lisatud\nProtsess");
@@ -140,18 +140,15 @@ public class GUI extends Application {
 		grid.getColumnConstraints().add(new ColumnConstraints(40));
 		grid.getColumnConstraints().add(new ColumnConstraints(60));
 
-
 		for (int i = 0; i < 50; i++) {
 			grid.add(new Text(Integer.toString(i)),i+2,0);
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
 
-
-		String[] testtemp = {"1;hello","A","A","B"};
-		String[] testtemp2 = {"2;hello2","A","A","B","C","G"};
-		addRow(testtemp,grid);
-		addRow(testtemp2,grid);
+		for (String[] strings : in) {
+			addRow(strings,grid);
+		}
 
 
 
