@@ -8,6 +8,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -19,6 +21,8 @@ import javafx.stage.Stage;
  * Et ei oleks default file template on siin see rida
  * Kunagi äkki mõni kommentaar ka juurde
  */
+
+
 public class GUI extends Application {
 
 	@Override
@@ -89,13 +93,12 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane("test"),vBox,primaryStage);
+				String[][] temp = {{"test"}};
+				update(createNewPane(temp),vBox,primaryStage);
 			}
 		});
-
-		GridPane test = new GridPane();
-		test.add(new Button("ehhe"),1,1);
-		vBox.getChildren().addAll(test);
+		String[][] temp = {{"test"}};
+		vBox.getChildren().addAll(createNewPane(temp));
 
 
 		Scene scene = new Scene(vBox, 300, 100);
@@ -116,8 +119,13 @@ public class GUI extends Application {
 		primaryStage.show();
 
 	}
-
-	public static GridPane createNewPane(String in){
+	/**
+	 *Method takes some kind of input to create the graphical output noted in the sample program pictures
+	 *
+	 * That input will most likely be formatted as an array
+	 * [[metadata, 'a','a','b'....]]
+	 */
+	public static GridPane createNewPane(String[][] in){
 		GridPane grid = new GridPane();
 
 		Text txt = new Text("Lisatud\nProtsess");
@@ -133,12 +141,62 @@ public class GUI extends Application {
 		grid.getColumnConstraints().add(new ColumnConstraints(60));
 
 
-		for (int i = 0; i <= 50; i++) {
+		for (int i = 0; i < 50; i++) {
 			grid.add(new Text(Integer.toString(i)),i+2,0);
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
 
+
+		String[] testtemp = {"1;hello","A","A","B"};
+		String[] testtemp2 = {"2;hello2","A","A","B","C","G"};
+		addRow(testtemp,grid);
+		addRow(testtemp2,grid);
+
+
+
+		return grid;
+	}
+
+	/**
+	 * While the method above takes the whole stack of strings, this one takes just one line
+	 * metadata format "index;data"
+	 * @param in
+	 * @return
+	 */
+
+	public static GridPane addRow(String[] in,GridPane grid){
+		Text txt1 = new Text(in[0].split("[;]")[0]);
+		Text txt2 = new Text(in[0].split("[;]")[1]);
+
+		int row = Integer.parseInt(txt1.getText());
+
+		txt1.setTextAlignment(TextAlignment.CENTER);
+		txt2.setTextAlignment(TextAlignment.CENTER);
+
+		grid.add(txt1,0,row);
+		grid.add(txt2,1,row);
+
+		for (int i = 0; i < in.length-1; i++) {
+			Rectangle rekt = new Rectangle(20,20,Color.BLUE);
+			rekt.setStroke(Color.BLACK);
+			Text text = new Text(in[i+1]);
+			StackPane pane = new StackPane();
+			pane.getChildren().addAll(rekt,text);
+
+			grid.add(pane,i+2,row);
+		}
+		if(in.length < 51){
+			for (int i = 0; i < 51-in.length; i++) {
+				Rectangle rekt = new Rectangle(20,20,Color.GREY);
+				rekt.setStroke(Color.BLACK);
+				Text text = new Text("-");
+				StackPane pane = new StackPane();
+				pane.getChildren().addAll(rekt,text);
+
+				grid.add(pane,in.length+1+i,row);
+			}
+		}
 		return grid;
 	}
 }
