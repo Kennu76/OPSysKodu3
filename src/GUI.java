@@ -98,29 +98,15 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				//update(createNewPane(temp),vBox,primaryStage);
+				update(createNewPane(Functions.firstFit(btnText4.getText())),vBox,primaryStage);
 			}
 		});
-		String[][] temp = {{"1;hello","A", "B", "C"},{"1;hello","A", "B", "C"}};
-        String[][] temp2 = {{"1;hello","A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}};
-		String jarjend = "1,8;6,4;3,6;4,2;1,4;3,3;1,2;35,1;50,1";
-        System.out.print(jarjend);
-        ArrayList<ArrayList> intid = new ArrayList<>();
-        int i = 0;
-        for (String item : jarjend.split(";")){
-            ArrayList asi = new ArrayList();
-            asi.add(item.split(",")[0]);
-            asi.add(item.split(",")[1]);
-            intid.add(asi);
-
-        }
-        vBox.getChildren().addAll(createNewPane(temp));
 
 
 
 		Scene scene = new Scene(vBox, 300, 100);
 
-		primaryStage.setTitle(intid.toString());
+		primaryStage.setTitle("Kodutöö2");
 		primaryStage.setScene(scene);
 		primaryStage.setHeight(500);
 		primaryStage.setWidth(1200);
@@ -143,6 +129,13 @@ public class GUI extends Application {
 	 * [[metadata, 'a','a','b'....],[metadata,"a"..]]
 	 */
 	public static GridPane createNewPane(String[][] in){
+		for (String[] strings : in) {
+			String s = "";
+			for (String si : strings) {
+				s += si + " ";
+			}
+			System.out.println(s);
+		}
 
 		GridPane grid = new GridPane();
 
@@ -167,9 +160,9 @@ public class GUI extends Application {
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
-
+		int index = 1;
 		for (String[] strings : in) {
-			addRow(strings,grid);
+			addRow(strings,grid, index++);
 		}
 
 		return grid;
@@ -182,19 +175,18 @@ public class GUI extends Application {
 	 * @return
 	 */
 
-	public static GridPane addRow(String[] in,GridPane grid){
+	public static GridPane addRow(String[] in,GridPane grid, int row){
 
 		Color[] list = {Color.BLUE, Color.RED, Color.ORANGE, Color.CYAN, Color.PALEGREEN,
-				Color.SALMON, Color.GREEN, Color.YELLOW, Color.LAVENDER, Color.PINK};
+				Color.SALMON, Color.GREEN, Color.YELLOW, Color.LAVENDER, Color.PINK, Color.GRAY};
 		List<String> chars = new ArrayList();
-		String[] cs = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+		String[] cs = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "-"};
 		chars = Arrays.asList(cs);
 
 
-		Text txt1 = new Text(in[0].split("[;]")[0]);
-		Text txt2 = new Text(in[0].split("[;]")[1]);
+		Text txt1 = new Text(Integer.toString(row));
+		Text txt2 = new Text(in[0]);
 
-		int row = Integer.parseInt(txt1.getText());
 
 		txt1.setTextAlignment(TextAlignment.CENTER);
 		txt2.setTextAlignment(TextAlignment.CENTER);
