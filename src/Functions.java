@@ -50,7 +50,7 @@ public class Functions {
 		}
 
 		int[] addr = new int[10];
-		
+
 		//P6mst, iga tsykkel ta peab kontrollim
 		//kus on vanad ja hoidma neid m'lus kui vaja
 		//ja esimene koht kuhu panna uus
@@ -69,15 +69,21 @@ public class Functions {
 					mem[j] = chars.get(0);
 					addr[0] = 1;
 				}
-
 				processes[0][1] = processes[0][1]-1;
-				out[0] = Arrays.copyOf(mem,mem.length);
 				continue;
 			}
 			
 			for (int j = 0; j <= i ; j++) {
-
+				if(processes[j][1] == 0){
+					continue;
+				}else{
+					for (int k = 0; k < processes[j][1]; k++) {
+						mem[1+k+addr[j]] = chars.get(j);
+					}
+					processes[j][1] = processes[j][1]-1;
+				}
 			}
+			out[i] = Arrays.copyOf(mem,mem.length);
 
 
 		}

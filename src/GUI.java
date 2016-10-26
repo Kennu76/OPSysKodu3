@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -14,6 +15,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.ir.FunctionCall;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -103,7 +105,7 @@ public class GUI extends Application {
 		});
 
 
-
+		vBox.getChildren().add(new GridPane());
 		Scene scene = new Scene(vBox, 300, 100);
 
 		primaryStage.setTitle("Kodutöö2");
@@ -118,7 +120,7 @@ public class GUI extends Application {
 
 	public static void update(GridPane newPane, VBox vBox, Stage primaryStage){
 		vBox.getChildren().remove(vBox.getChildren().size()-1);
-		vBox.getChildren().addAll(newPane);
+		vBox.getChildren().add(newPane);
 		primaryStage.show();
 
 	}
