@@ -102,12 +102,23 @@ public class GUI extends Application {
 			}
 		});
 		String[][] temp = {{"1;hello","A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}};
-		vBox.getChildren().addAll(createNewPane(temp));
+		String jarjend = "1,8;6,4;3,6;4,2;1,4;3,3;1,2;35,1;50,1";
+        System.out.print(jarjend);
+        ArrayList<ArrayList> intid = new ArrayList<>();
+        int i = 0;
+        for (String item : jarjend.split(";")){
+            ArrayList asi = new ArrayList();
+            asi.add(item.split(",")[0]);
+            asi.add(item.split(",")[1]);
+            intid.add(asi);
+
+        }
+        vBox.getChildren().addAll(createNewPane(temp));
 
 
 		Scene scene = new Scene(vBox, 300, 100);
 
-		primaryStage.setTitle("Kodutöö2");
+		primaryStage.setTitle(intid.toString());
 		primaryStage.setScene(scene);
 		primaryStage.setHeight(500);
 		primaryStage.setWidth(1200);
