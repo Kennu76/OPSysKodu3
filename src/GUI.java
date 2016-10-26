@@ -116,9 +116,6 @@ public class GUI extends Application {
         }
         vBox.getChildren().addAll(createNewPane(temp));
 
-        //for (String[] strings : temp2) {
-        //    addRow(strings,grid);
-        //}
 
 
 		Scene scene = new Scene(vBox, 300, 100);
