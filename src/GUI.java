@@ -101,7 +101,8 @@ public class GUI extends Application {
 				//update(createNewPane(temp),vBox,primaryStage);
 			}
 		});
-		String[][] temp = {{"1;hello","A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}};
+		String[][] temp = {{"1;hello","A", "B", "C"},{"1;hello","A", "B", "C"}};
+        String[][] temp2 = {{"1;hello","A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}};
 		String jarjend = "1,8;6,4;3,6;4,2;1,4;3,3;1,2;35,1;50,1";
         System.out.print(jarjend);
         ArrayList<ArrayList> intid = new ArrayList<>();
@@ -114,6 +115,10 @@ public class GUI extends Application {
 
         }
         vBox.getChildren().addAll(createNewPane(temp));
+
+        //for (String[] strings : temp2) {
+        //    addRow(strings,grid);
+        //}
 
 
 		Scene scene = new Scene(vBox, 300, 100);
@@ -169,8 +174,6 @@ public class GUI extends Application {
 		for (String[] strings : in) {
 			addRow(strings,grid);
 		}
-
-
 
 		return grid;
 	}
