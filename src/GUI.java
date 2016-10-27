@@ -122,28 +122,28 @@ public class GUI extends Application {
 			}
 		});
 
-
+		//firstFit
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFit(btnText4.getText())),vBox,primaryStage);
-			}
-		});
-
-		algo2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
 			}
 		});
-
+		//worstFit
+		algo2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(createNewPane(Functions.worstFit(sample)),vBox,primaryStage);
+			}
+		});
+		//bestFit
 		algo3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
 			}
 		});
-
+		//randomFit
 		algo4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -187,11 +187,18 @@ public class GUI extends Application {
 	public static GridPane createNewPane(String[][] in){
 		for (String[] strings : in) {
 			String s = "";
+			if(strings == null) {
+				System.out.println("nullrida");
+				continue;
+			}
 			for (String si : strings) {
+
 				s += si + " ";
 			}
+
 			System.out.println(s);
 		}
+		System.out.println();
 
 		GridPane grid = new GridPane();
 
@@ -218,6 +225,10 @@ public class GUI extends Application {
 		}
 		int index = 1;
 		for (String[] strings : in) {
+			if(strings == null){
+				grid.add(new Text("MÄLU SAI TÄIS, LÕPETAN TÖÖTAMISE"),0,index);
+				break;
+			}
 			addRow(strings,grid, index++);
 		}
 
