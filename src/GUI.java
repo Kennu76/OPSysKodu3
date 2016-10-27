@@ -92,16 +92,17 @@ public class GUI extends Application {
 		Button algo3 = new Button("Best-Fit");
 		Button algo4 = new Button("Random-Fit");
 		Button puhasta = new Button("Puhasta väljund");
+        String[][] asi = {{"1,8","A","B","C"},{"6,4","A","B"}};
 
 		hBox.getChildren().addAll(algo1,algo2,algo3,algo4,puhasta);
 
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFit(btnText4.getText())),vBox,primaryStage);
+				update(createNewPane(Functions.firstFitNew(btnText4.getText())),vBox,primaryStage);
 			}
 		});
-
+		Functions.firstFitNew(btnText4.getText());
 
 		vBox.getChildren().add(new GridPane());
 		Scene scene = new Scene(vBox, 300, 100);

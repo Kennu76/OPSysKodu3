@@ -92,4 +92,35 @@ public class Functions {
 
 		return out;
 	}
+    public static String[][] firstFitNew(String in){
+        String[][] out = genEmpty();
+        ArrayList jarjend = new ArrayList();
+        String[] numbrid = in.split(";");
+        int i = 1;
+
+        String[] mem = new String[51];
+
+        for (int j = 0; j < 51; j++) {
+            mem[j] = "-";
+        }
+		mem[0] = "-";
+		out[0] = Arrays.copyOf(mem,mem.length);
+        for(String item : numbrid ){
+            mem = new String[51];
+            for (int j = 0; j < 51; j++) {
+                mem[j] = "-";
+            }
+            mem[0] = item;
+            out[i] = Arrays.copyOf(mem,mem.length);
+			ArrayList asi = new ArrayList();
+            asi.add(Integer.parseInt(item.split(",")[0]));
+            asi.add(Integer.parseInt(item.split(",")[1]));
+            jarjend.add(asi);
+            i++;
+        }
+        System.out.println(jarjend.toString());
+
+        return out;
+    }
+
 }
