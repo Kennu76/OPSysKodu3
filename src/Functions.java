@@ -92,7 +92,7 @@ public class Functions {
 
 		return out;
 	}
-    public static String[][] firstFitNew(String in){
+    public static String[][] worstFit(String in){
         String[][] out = genEmpty();
         ArrayList jarjend = new ArrayList();
         String[] numbrid = in.split(";");
@@ -117,6 +117,9 @@ public class Functions {
             asi.add(Integer.parseInt(item.split(",")[1]));
             jarjend.add(asi);
             i++;
+        }
+        for(int x = 0;x<10;x++){
+
         }
         System.out.println(jarjend.toString());
 

@@ -99,10 +99,10 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFitNew(btnText4.getText())),vBox,primaryStage);
+				update(createNewPane(Functions.worstFit(btnText4.getText())),vBox,primaryStage);
 			}
 		});
-		Functions.firstFitNew(btnText4.getText());
+		//Functions.firstFitNew(btnText4.getText());
 
 		vBox.getChildren().add(new GridPane());
 		Scene scene = new Scene(vBox, 300, 100);
