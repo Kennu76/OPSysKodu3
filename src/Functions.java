@@ -104,4 +104,13 @@ public class Functions {
 
 		return out;
 	}
+
+    public static String[][] worstFit(String in){
+        String[][] out = genEmpty();
+        int[][] processes = parse(in);
+        List<String> chars = chars();
+
+
+        return out;
+    }
 }
