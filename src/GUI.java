@@ -28,15 +28,19 @@ import java.util.List;
  * Kasutajaliidese kirjutas Ott Oopkaup, mis on ka üleval minu GIT'is
  * https://github.com/Alkhatraz/OPSysKodu2
  *
- * Kasutajaliides sai jagatud teiste asjaosalistega, mina ei vastuta kopeeritud funktsioonide eest,
- * ainult kasutajaliidese eest
+ * Kasutajaliides sai jagatud teiste ]pilastega, kirjutaja ei vastuta kopeeritud funktsioonide eest,
+ *
  */
 
 
 public class GUI extends Application {
+	//Default value is the 1st example, is set here
 	static String sample = "4,5;2,7;9,2;4,6;7,1;6,4;8,8;3,6;1,10;9,2";
+
+	//All the buttons and the neccesary hooks to make the UI work
 	@Override
 	public void start(Stage primaryStage) {
+
 
 		VBox vBox = new VBox();
 		vBox.setPadding(new Insets(0,10,0,10));
@@ -175,6 +179,8 @@ public class GUI extends Application {
 		launch(args);
 	}
 
+
+	//Method updates the UI with a new Gridpane that is used as the output field
 	public static void update(GridPane newPane, VBox vBox, Stage primaryStage){
 		vBox.getChildren().remove(vBox.getChildren().size()-1);
 		vBox.getChildren().add(newPane);
@@ -182,26 +188,13 @@ public class GUI extends Application {
 
 	}
 	/**
-	 *Method takes some kind of input to create the graphical output noted in the sample program pictures
+	 *Method takes some input to create the graphical output noted in the sample program pictures
 	 *
-	 * That input will most likely be formatted as an array
+	 * That input is formatted as an array like
 	 * [[metadata, 'a','a','b'....],[metadata,"a"..]]
+	 * metadata is the process description
 	 */
 	public static GridPane createNewPane(String[][] in){
-		for (String[] strings : in) {
-			String s = "";
-			if(strings == null) {
-				System.out.println("nullrida");
-				continue;
-			}
-			for (String si : strings) {
-
-				s += si + " ";
-			}
-
-			System.out.println(s);
-		}
-		System.out.println();
 
 		GridPane grid = new GridPane();
 
@@ -217,7 +210,7 @@ public class GUI extends Application {
 
 		grid.getColumnConstraints().add(new ColumnConstraints(40));
 		grid.getColumnConstraints().add(new ColumnConstraints(60));
-
+		//Sets the column headers and width
 		for (int i = 0; i < 50; i++) {
 			Text tempText = new Text(Integer.toString(i));
 			GridPane.setHalignment(tempText, HPos.CENTER);
@@ -226,6 +219,8 @@ public class GUI extends Application {
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
+		//The engine that creates individual rows, will also check if one of the functions threw a null
+		//to indicate full memory
 		int index = 1;
 		for (String[] strings : in) {
 			if(strings == null){
@@ -240,7 +235,7 @@ public class GUI extends Application {
 
 	/**
 	 * While the method above takes the whole stack of strings, this one takes just one line
-	 * metadata format "index;data"
+	 * metadata format "data"
 	 *
 	 */
 
@@ -263,8 +258,8 @@ public class GUI extends Application {
 		grid.add(txt1,0,row);
 		grid.add(txt2,1,row);
 
+		//Colors each rectangle as needed
 		for (int i = 0; i < in.length-1; i++) {
-
 			Rectangle rekt = new Rectangle(20,20,list[chars.indexOf(in[i+1])]);
 			rekt.setStroke(Color.BLACK);
 			Text text = new Text(in[i+1]);
@@ -274,6 +269,7 @@ public class GUI extends Application {
 
 			grid.add(pane,i+2,row);
 		}
+		//Semi-legacy, as the functions i wrote automatically fill unused spaces with "-"
 		if(in.length < 51){
 			for (int i = 0; i < 51-in.length; i++) {
 				Rectangle rekt = new Rectangle(20,20,Color.GREY);
