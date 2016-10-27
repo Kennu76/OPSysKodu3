@@ -63,9 +63,9 @@ public class Functions {
 
 		for (int i = 0; i < processes.length; i++) {
 			mem[0] = Integer.toString(processes[i][0]) + "," + Integer.toString(processes[i][1]) ;
-
+			System.out.println(Arrays.asList(mem).toString());
 			if(i == 0){
-				for (int j = 1; j <= processes[0][0]; j++) {
+				for (int j = 1; j <= processes[0][1]; j++) {
 					mem[j] = chars.get(0);
 					addr[0] = 1;
 				}
