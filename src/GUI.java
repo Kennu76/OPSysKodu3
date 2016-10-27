@@ -31,7 +31,7 @@ import java.util.List;
 
 
 public class GUI extends Application {
-
+	static String sample = "4,5;2,7;9,2;4,6;7,1;6,4;8,8;3,6;1,10;9,2";
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -47,9 +47,9 @@ public class GUI extends Application {
 		vBox.getChildren().add(grid);
 
 		Text t = new Text("Vali või sisesta kuni 10 kohaline järjend");
-		Text btnText1 = new Text("Situ pihku prill");
-		Text btnText2 = new Text("Situ pihku prill");
-		Text btnText3 = new Text("Situ pihku prill");
+		Text btnText1 = new Text("4,5;2,7;9,2;4,6;7,1;6,4;8,8;3,6;1,10;9,2");
+		Text btnText2 = new Text("1,10;6,6;3,9;2,4;1,6;5,2;1,4;5,2;2,1;2,7");
+		Text btnText3 = new Text("5,10;6,6;3,9;8,4;3,6;5,12;1,4;15,2;3,4;9,7");
 		TextField btnText4 = new TextField("1,8;6,4;3,6;4,2;1,4;3,3;1,2;35,1;50,1");
 		btnText4.setMinWidth(300);
 		btnText4.setPadding(new Insets(5,0,5,0));
@@ -97,10 +97,64 @@ public class GUI extends Application {
 
 		hBox.getChildren().addAll(algo1,algo2,algo3,algo4,puhasta);
 
+		btn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sample = btnText1.getText();
+			}
+		});
+		btn2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sample = btnText2.getText();
+			}
+		});
+		btn3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sample = btnText3.getText();
+			}
+		});
+		btn4.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sample = btnText4.getText();
+			}
+		});
+
+
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				update(createNewPane(Functions.firstFit(btnText4.getText())),vBox,primaryStage);
+			}
+		});
+
+		algo2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+			}
+		});
+
+		algo3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+			}
+		});
+
+		algo4.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+			}
+		});
+
+		puhasta.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				update(new GridPane(),vBox,primaryStage);
 			}
 		});
 
