@@ -122,8 +122,8 @@ public class Functions {
 						if(mem[k].equals("-")){
 							for (int l = 0; l < 50-k; l++) {
 								if(!mem[k+l].equals("-")){
-									map.put(l,k);
-									k+= l;
+									map.put(l,k-1);
+									k+= l-1;
 									continue loop;
 								}
 							}
@@ -136,9 +136,6 @@ public class Functions {
 					int size = 0;
 
 					for (Integer integer : map.keySet()) {
-						System.out.println(integer);
-						System.out.println(map.get(integer));
-						System.out.println();
 						if(integer > size){
 							size = integer;
 							addr[j] = map.get(integer);
@@ -161,6 +158,145 @@ public class Functions {
 		}
 		return out;
 	}
+	//should work
+	public static String[][] bestFit(String in){
+		String[][] out = genEmpty();
+		int[][] processes = parse(in);
+		List<String> chars = chars();
+		String[] mem = new String[51];
+		int[] addr = new int[10];
 
+		for (int i = 0; i < processes.length; i++) {
+			//clear memory
+			for (int d = 0; d < 51; d++) {
+				mem[d] = "-";
+			}
+			mem[0] = Integer.toString(processes[i][0]) + "," + Integer.toString(processes[i][1]);
+			for (int j = 0; j <= i; j++) {
+				//Delete old processes and write the ones still running
+				if(j<i){
+					if(processes[j][1] >= 1){
+						for (int k = 0; k < processes[j][0]; k++) {
+							mem[addr[j]+1+k] = chars.get(j);
+						}
+					}
+				}else{ //Find smallest free memory where it fits, if it is a new process
+					//Key is the size, value will be index
+					//Reused code from worstfit, just now will check for minimal size
+					HashMap<Integer,Integer> map = new HashMap<>();
+					loop:
+					for (int k = 0; k < 51; k++) {
+						if(mem[k].equals("-")){
+							for (int l = 0; l < 51-k; l++) {
+								if(!mem[k+l].equals("-")){
+									map.put(l,k-1);
+									k+= l;
+									continue loop;
+								}
+							}
+							map.put(51-k,k-1);
+							break;
+						}
+
+					}
+
+					int size = 50;
+
+					for (Integer integer : map.keySet()) {
+						System.out.println(integer);
+						System.out.println(map.get(integer));
+						System.out.println();
+						if(integer < size && integer >= processes[i][0]){
+							size = integer;
+							addr[j] = map.get(integer);
+						}
+					}
+
+					//write into output
+					for (int k = 0; k < processes[i][0]; k++) {
+						try {
+							mem[addr[j] + k + 1] = chars.get(j);
+						}catch (Exception e){
+							out[i] = null;
+							return out;
+						}
+					}
+				}
+				processes[j][1]--;
+			}
+			out[i] = Arrays.copyOf(mem,mem.length);
+		}
+		return out;
+	}
+
+	public static String[][] randomFit(String in){
+		String[][] out = genEmpty();
+		int[][] processes = parse(in);
+		List<String> chars = chars();
+		String[] mem = new String[51];
+		int[] addr = new int[10];
+
+		for (int i = 0; i < processes.length; i++) {
+			//clear memory
+			for (int d = 0; d < 51; d++) {
+				mem[d] = "-";
+			}
+			mem[0] = Integer.toString(processes[i][0]) + "," + Integer.toString(processes[i][1]);
+			for (int j = 0; j <= i; j++) {
+				//Delete old processes and write the ones still running
+				if(j<i){
+					if(processes[j][1] >= 1){
+						for (int k = 0; k < processes[j][0]; k++) {
+							mem[addr[j]+1+k] = chars.get(j);
+						}
+					}
+				}else{ //Find smallest free memory spaces where it fits, then select one at random and go for it
+					//Key is the size, value will be index
+					//Reused code from worstfit, just now will check for minimal size
+					HashMap<Integer,Integer> map = new HashMap<>();
+					loop:
+					for (int k = 0; k < 51; k++) {
+						if(mem[k].equals("-")){
+							for (int l = 0; l < 51-k; l++) {
+								if(!mem[k+l].equals("-")){
+									map.put(l,k-1);
+									k+= l;
+									continue loop;
+								}
+							}
+							map.put(51-k,k-1);
+							break;
+						}
+
+					}
+
+					int size = 50;
+
+					for (Integer integer : map.keySet()) {
+						System.out.println(integer);
+						System.out.println(map.get(integer));
+						System.out.println();
+						if(integer < size && integer >= processes[i][0]){
+							size = integer;
+							addr[j] = map.get(integer);
+						}
+					}
+
+					//write into output
+					for (int k = 0; k < processes[i][0]; k++) {
+						try {
+							mem[addr[j] + k + 1] = chars.get(j);
+						}catch (Exception e){
+							out[i] = null;
+							return out;
+						}
+					}
+				}
+				processes[j][1]--;
+			}
+			out[i] = Arrays.copyOf(mem,mem.length);
+		}
+		return out;
+	}
 
 }

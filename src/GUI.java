@@ -25,8 +25,11 @@ import java.util.List;
 /**
  * Created by alk_ on 10/25/16.
  *
- * Et ei oleks default file template on siin see rida
- * Kunagi äkki mõni kommentaar ka juurde
+ * Kasutajaliidese kirjutas Ott Oopkaup, mis on ka üleval minu GIT'is
+ * https://github.com/Alkhatraz/OPSysKodu2
+ *
+ * Kasutajaliides sai jagatud teiste asjaosalistega, mina ei vastuta kopeeritud funktsioonide eest,
+ * ainult kasutajaliidese eest
  */
 
 
@@ -140,14 +143,14 @@ public class GUI extends Application {
 		algo3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.bestFit(sample)),vBox,primaryStage);
 			}
 		});
 		//randomFit
 		algo4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.randomFit(sample)),vBox,primaryStage);
 			}
 		});
 
@@ -238,8 +241,7 @@ public class GUI extends Application {
 	/**
 	 * While the method above takes the whole stack of strings, this one takes just one line
 	 * metadata format "index;data"
-	 * @param in
-	 * @return
+	 *
 	 */
 
 	public static GridPane addRow(String[] in,GridPane grid, int row){
