@@ -37,56 +37,68 @@ public class Functions {
 
 		return out;
 	}
-
+	//should work, still TODO is to make the error output
 	public static String[][] firstFit(String in){
 		String[][] out = genEmpty();
 		int[][] processes = parse(in);
 		List<String> chars = chars();
-		
+
 		String[] mem = new String[51];
 
-		for (int i = 0; i < 51; i++) {
-			mem[i] = "-";
-		}
+
 
 		int[] addr = new int[10];
 
-		//P6mst, iga tsykkel ta peab kontrollim
-		//kus on vanad ja hoidma neid m'lus kui vaja
-		//ja esimene koht kuhu panna uus
-
-		//Lisab esimene malu rea, see pole automaatne
-
-
-		out[0] = mem;
-
 
 		for (int i = 0; i < processes.length; i++) {
-			mem[0] = Integer.toString(processes[i][0]) + "," + Integer.toString(processes[i][1]) ;
-			System.out.println(Arrays.asList(mem).toString());
-			if(i == 0){
-				for (int j = 1; j <= processes[0][1]; j++) {
-					mem[j] = chars.get(0);
-					addr[0] = 1;
-				}
-				processes[0][1] = processes[0][1]-1;
-				continue;
+			//clear memory
+			for (int d = 0; d < 51; d++) {
+				mem[d] = "-";
 			}
-			
-			for (int j = 0; j <= i ; j++) {
-				if(processes[j][1] == 0){
-					continue;
-				}else{
-					for (int k = 0; k < processes[j][1]; k++) {
-						mem[1+k+addr[j]] = chars.get(j);
+
+			for (int j = 0; j <= i; j++) {
+				//Delete old processes and write the ones still running
+
+				if(j<i){
+					if(processes[j][1] >= 1){
+						for (int k = 0; k < processes[j][0]; k++) {
+							mem[addr[j]+1+k] = chars.get(j);
+						}
 					}
-					processes[j][1] = processes[j][1]-1;
+				}else{ //Find first free memory where it fits, if it is a new process
+					for (int k = 0; k < 50; k++) {
+						boolean flag = true;
+
+						for (int l = 0; l < processes[i][0]; l++) {
+							if(! mem[k+l+1].equals("-")){
+								flag = false;
+								break;
+							}
+						}
+
+						if(flag){
+							addr[j] = k;
+							break ;
+						}
+
+					}
+					for (int k = 0; k < processes[i][0]; k++) {
+						try {
+							mem[addr[j] + k + 1] = chars.get(j);
+						}catch (Exception e){
+							//
+						}
+					}
+
 				}
+				processes[j][1]--;
 			}
+
 			out[i] = Arrays.copyOf(mem,mem.length);
 
-
 		}
+
+
 
 
 
