@@ -1,7 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.*;
-
-import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 /**
  * Created by alk_ on 10/26/16.
@@ -12,18 +9,20 @@ public class Functions {
     public static int teepikkus(ArrayList in){
         int teepikkus = 0;
         for (int k = 0; k < (in.size()-1); k++){
-
+            teepikkus += Math.abs(Integer.parseInt( in.get(k).toString()) - Integer.parseInt(in.get(k+1).toString()));
         }
+    return teepikkus;
     }
 
     public static String[] FCFS(String in){
-        ArrayList numbrid = new ArrayList();
+        ArrayList<Integer> numbrid = new ArrayList<>();
         int teepikkus = 0;
 
         numbrid.add(10);
         for (int k = 0; k < (in.split(",").length); k++){
             numbrid.add(Integer.parseInt(in.split(",")[k]));
         }
+        numbrid.add(0,teepikkus(numbrid));
 
 
 
