@@ -121,4 +121,41 @@ public class Functions  {
 
     return convert(uued_numbrid);
     }
+    
+    public static int[] CSCAN(String in){
+        ArrayList<Integer> numbrid = new ArrayList<>();
+        ArrayList<Integer> uued_numbrid = new ArrayList<>();
+        ArrayList<Integer> max_numbrid = new ArrayList<>();
+        ArrayList<Integer> min_numbrid = new ArrayList<>();
+
+
+
+        int teepikkus = 0;
+
+        max_numbrid.add(50);
+        max_numbrid.add(10);
+        
+        for (int k = 0; k < (in.split(",").length); k++){
+            numbrid.add(Integer.parseInt(in.split(",")[k]));
+        }
+
+        for(int i:numbrid){
+            if(i>10){
+                max_numbrid.add(i);
+            }
+            else {
+                min_numbrid.add(i);
+            }
+        }
+        for(int i:max_numbrid){
+
+        }
+        Collections.sort(max_numbrid);
+        Collections.sort(min_numbrid);        
+        uued_numbrid.addAll(max_numbrid);
+        uued_numbrid.addAll(min_numbrid);
+        uued_numbrid.add(0,teepikkus(uued_numbrid));
+
+    return convert(uued_numbrid);
+    }
 }
