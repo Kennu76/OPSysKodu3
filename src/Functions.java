@@ -14,7 +14,7 @@ public class Functions {
     return teepikkus;
     }
 
-    public static String[] FCFS(String in){
+    public static int[] FCFS(String in){
         ArrayList<Integer> numbrid = new ArrayList<>();
         int teepikkus = 0;
 
@@ -26,7 +26,7 @@ public class Functions {
 
 
 
-        return (String[])numbrid.toArray();
+        return convert(numbrid);
     }
 
     public static int[] test(String s){
@@ -34,7 +34,7 @@ public class Functions {
         return null;
     }
 
-    private int[] convert(ArrayList<Integer> list){
+    private static int[] convert(ArrayList<Integer> list){
         int[] out = new int[list.size()];
 
         for (int i = 0; i < list.size(); i++) {
