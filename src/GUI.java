@@ -19,6 +19,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import jdk.nashorn.internal.ir.FunctionCall;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -178,8 +179,7 @@ public class GUI extends Application {
 		primaryStage.show();
 	}
 	public static void main(String[] args) {
-
-		for(int i :Functions.FCFS("1,10,44,2,12,3,13,20")){
+		for(int i :Functions.SSTF("1,10,44,2,12,3,13,20")){
 			System.out.println(i);
 		};
 		launch(args);

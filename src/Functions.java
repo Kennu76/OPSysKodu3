@@ -13,6 +13,21 @@ public class Functions {
         }
     return teepikkus;
     }
+    public static int closest(int of, ArrayList<Integer> in) {
+        int min = Integer.MAX_VALUE;
+        int closest = of;
+
+        for (int v : in) {
+            final int diff = Math.abs(v - of);
+
+            if (diff < min) {
+                min = diff;
+                closest = v;
+            }
+        }
+
+        return closest;
+    }
 
     public static int[] FCFS(String in){
         ArrayList<Integer> numbrid = new ArrayList<>();
@@ -42,6 +57,34 @@ public class Functions {
         }
         return out;
     }
+
+    public static int[] SSTF(String in){
+        ArrayList<Integer> numbrid = new ArrayList<>();
+        ArrayList<Integer> uued_numbrid = new ArrayList<>();
+        int teepikkus = 0;
+
+        numbrid.add(10);
+        for (int k = 0; k < (in.split(",").length); k++){
+            numbrid.add(Integer.parseInt(in.split(",")[k]));
+        }
+        int k = 0;
+        while(numbrid.size() != 0){
+            System.out.print(numbrid.get(k));
+            int number = numbrid.get(k);
+            numbrid.remove(k);
+            int closest = closest(number,numbrid);
+            uued_numbrid.add(closest);
+            numbrid.add(0,closest);
+        }
+        uued_numbrid.add(0,teepikkus(uued_numbrid));
+
+
+
+        return convert(uued_numbrid);
+        //10,10,12,13,20,3,2,1,44
+        //10,1,10,44,2,12,3,13,20
+    }
+
 
 
 
