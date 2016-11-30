@@ -29,7 +29,7 @@ public class Functions {
         return (String[])numbrid.toArray();
     }
 
-    public static String[][] test(String s){
+    public static int[] test(String s){
 
         return null;
     }
@@ -42,5 +42,7 @@ public class Functions {
         }
         return out;
     }
+
+
 
 }

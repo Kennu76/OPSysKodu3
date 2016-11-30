@@ -197,7 +197,7 @@ public class GUI extends Application {
 	 * [[metadata, 'a','a','b'....],[metadata,"a"..]]
 	 * metadata is the process description
 	 */
-	public static GridPane createNewPane(String[] in){
+	public static GridPane createNewPane(int[] in){
 
 		GridPane grid = new GridPane();
 
