@@ -176,6 +176,7 @@ public class GUI extends Application {
 		primaryStage.show();
 	}
 	public static void main(String[] args) {
+		System.out.println(Functions.FCFS("1,10,14"));
 		launch(args);
 	}
 
