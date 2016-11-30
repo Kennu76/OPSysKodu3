@@ -229,5 +229,7 @@ public class GUI extends Application {
 	 */
 
 	public static GridPane createGraph(String[] in,GridPane grid, int row){
+		return null;
+	}
 
 }
