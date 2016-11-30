@@ -183,7 +183,7 @@ public class GUI extends Application {
 	}
 	public static void main(String[] args) {
 
-		for(int i :Functions.SSTF("1,10,44,2,12,3,13,20")){
+		for(int i :Functions.LOOK("1,10,44,2,12,3,13,20")){
 			System.out.println(i);
 		};
 		launch(args);
