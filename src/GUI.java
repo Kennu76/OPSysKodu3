@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -194,7 +196,7 @@ public class GUI extends Application {
 	 * [[metadata, 'a','a','b'....],[metadata,"a"..]]
 	 * metadata is the process description
 	 */
-	public static GridPane createNewPane(String[][] in){
+	public static GridPane createNewPane(String[] in){
 
 		GridPane grid = new GridPane();
 
@@ -219,17 +221,23 @@ public class GUI extends Application {
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
-		return grid;
+
+		String[] test = {""};
+ 		return createGraph(test,grid);
 	}
 
-	/**
-	 * While the method above takes the whole stack of strings, this one takes just one line
-	 * metadata format "data"
-	 *
-	 */
 
-	public static GridPane createGraph(String[] in,GridPane grid, int row){
-		return null;
+
+	public static GridPane createGraph(String[] in,GridPane grid){
+		int column = 20;
+
+		Line line = new Line(10,0,100,10);
+		Line l2 = new Line(100,10,200,20);
+		grid.add(line,3,2);
+		grid.setAlignment(Pos.CENTER);
+
+		grid.add(l2,8,4);
+		return grid;
 	}
 
 }

@@ -17,13 +17,25 @@ public class Functions {
         }
 
 
-
         return numbrid;
+
+
     }
 
-    public static String[][] test(String s){
+
+
+    public static String[] test(String s){
 
         return null;
+    }
+
+    private int[] convert(ArrayList<Integer> list){
+        int[] out = new int[list.size()];
+
+        for (int i = 0; i < list.size(); i++) {
+            out[i] = list.get(i);
+        }
+        return out;
     }
 
 }
