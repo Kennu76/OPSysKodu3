@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cdf2efd-f706-4fdc-b5ba-10a52c8936b1" name="Default" comment="Still tryina commit">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/OPSysKodu2/Functions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/OPSysKodu2/GUI$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/OPSysKodu2/GUI.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Functions.java" afterPath="$PROJECT_DIR$/src/Functions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
@@ -28,42 +25,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="577">
+              <caret line="230" column="18" selection-start-line="230" selection-start-column="18" selection-end-line="230" selection-end-column="26" />
               <folding>
-                <element signature="class#2974:3107" expanded="false" />
-                <element signature="class#3133:3266" expanded="false" />
-                <element signature="class#3292:3425" expanded="false" />
-                <element signature="class#3451:3584" expanded="false" />
-                <element signature="class#3625:3798" expanded="false" />
-                <element signature="e#3928#3929#0" expanded="true" />
-                <element signature="e#4006#4007#0" expanded="true" />
-                <element signature="class#4050:4222" expanded="false" />
-                <element signature="class#4263:4437" expanded="false" />
-                <element signature="e#4353#4354#0" expanded="true" />
-                <element signature="e#4432#4433#0" expanded="true" />
-                <element signature="class#4467:4613" expanded="false" />
+                <element signature="e#4114#4115#0" expanded="true" />
+                <element signature="e#4188#4189#0" expanded="true" />
                 <element signature="method#update#0;class#GUI#0" expanded="false" />
-                <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-                <element signature="method#addRow#0;class#GUI#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Functions.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Functions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Functions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="252" column="112" selection-start-line="252" selection-start-column="112" selection-end-line="252" selection-end-column="112" />
+            <state relative-caret-position="135">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
-                <element signature="method#parse#0;class#Functions#0" expanded="false" />
-                <element signature="method#firstFit#0;class#Functions#0" expanded="false" />
-                <element signature="method#worstFit#0;class#Functions#0" expanded="false" />
-                <element signature="method#bestFit#0;class#Functions#0" expanded="false" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +65,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GUI.java" />
         <option value="$PROJECT_DIR$/src/Functions.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
       </list>
     </option>
   </component>
@@ -117,41 +100,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="OPSysKodu2" />
+              <option name="myItemId" value="OPSysKodu3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPSysKodu2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPSysKodu2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPSysKodu2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPSysKodu2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
@@ -485,23 +444,23 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49743262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276316" sideWeight="0.5089859" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276316" sideWeight="0.49101412" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736573" sideWeight="0.49101412" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.494852" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2169448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25866497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49743262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -577,7 +536,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Functions.java</url>
-          <line>135</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -593,24 +551,35 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding>
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
+            <element signature="method#update#0;class#GUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2974:3107" expanded="false" />
-            <element signature="class#3133:3266" expanded="false" />
-            <element signature="class#3292:3425" expanded="false" />
-            <element signature="class#3451:3584" expanded="false" />
-            <element signature="class#3625:3798" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="class#4050:4222" expanded="false" />
-            <element signature="class#4263:4437" expanded="false" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="class#4467:4613" expanded="false" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
             <element signature="method#update#0;class#GUI#0" expanded="false" />
-            <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-            <element signature="method#addRow#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -620,10 +589,8 @@
         <state relative-caret-position="2085">
           <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
           <folding>
-            <element signature="method#parse#0;class#Functions#0" expanded="false" />
-            <element signature="method#firstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#worstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#bestFit#0;class#Functions#0" expanded="false" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -633,21 +600,9 @@
         <state relative-caret-position="1200">
           <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
           <folding>
-            <element signature="class#2974:3107" expanded="false" />
-            <element signature="class#3133:3266" expanded="false" />
-            <element signature="class#3292:3425" expanded="false" />
-            <element signature="class#3451:3584" expanded="false" />
-            <element signature="class#3625:3798" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="class#4050:4222" expanded="false" />
-            <element signature="class#4263:4437" expanded="false" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="class#4467:4613" expanded="false" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
             <element signature="method#update#0;class#GUI#0" expanded="false" />
-            <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-            <element signature="method#addRow#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,10 +612,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#parse#0;class#Functions#0" expanded="false" />
-            <element signature="method#firstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#worstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#bestFit#0;class#Functions#0" expanded="false" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -677,21 +630,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2974:3107" expanded="false" />
-            <element signature="class#3133:3266" expanded="false" />
-            <element signature="class#3292:3425" expanded="false" />
-            <element signature="class#3451:3584" expanded="false" />
-            <element signature="class#3625:3798" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="class#4050:4222" expanded="false" />
-            <element signature="class#4263:4437" expanded="false" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="class#4467:4613" expanded="false" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
             <element signature="method#update#0;class#GUI#0" expanded="false" />
-            <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-            <element signature="method#addRow#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -708,21 +649,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2974:3107" expanded="false" />
-            <element signature="class#3133:3266" expanded="false" />
-            <element signature="class#3292:3425" expanded="false" />
-            <element signature="class#3451:3584" expanded="false" />
-            <element signature="class#3625:3798" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="class#4050:4222" expanded="false" />
-            <element signature="class#4263:4437" expanded="false" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="class#4467:4613" expanded="false" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
             <element signature="method#update#0;class#GUI#0" expanded="false" />
-            <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-            <element signature="method#addRow#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1215">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3818" column="0" selection-start-line="3818" selection-start-column="0" selection-end-line="3818" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,43 +695,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding>
-            <element signature="class#2974:3107" expanded="false" />
-            <element signature="class#3133:3266" expanded="false" />
-            <element signature="class#3292:3425" expanded="false" />
-            <element signature="class#3451:3584" expanded="false" />
-            <element signature="class#3625:3798" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="class#4050:4222" expanded="false" />
-            <element signature="class#4263:4437" expanded="false" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="class#4467:4613" expanded="false" />
-            <element signature="method#update#0;class#GUI#0" expanded="false" />
-            <element signature="method#createNewPane#0;class#GUI#0" expanded="false" />
-            <element signature="method#addRow#0;class#GUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Functions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="252" column="112" selection-start-line="252" selection-start-column="112" selection-end-line="252" selection-end-column="112" />
+        <state relative-caret-position="135">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
-            <element signature="method#parse#0;class#Functions#0" expanded="false" />
-            <element signature="method#firstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#worstFit#0;class#Functions#0" expanded="false" />
-            <element signature="method#bestFit#0;class#Functions#0" expanded="false" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="230" column="18" selection-start-line="230" selection-start-column="18" selection-end-line="230" selection-end-column="26" />
+          <folding>
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4188#4189#0" expanded="true" />
+            <element signature="method#update#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>

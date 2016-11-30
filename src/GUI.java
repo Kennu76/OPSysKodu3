@@ -53,11 +53,11 @@ public class GUI extends Application {
 
 		vBox.getChildren().add(grid);
 
-		Text t = new Text("Vali või sisesta kuni 10 kohaline järjend");
-		Text btnText1 = new Text("4,5;2,7;9,2;4,6;7,1;6,4;8,8;3,6;1,10;9,2");
-		Text btnText2 = new Text("1,10;6,6;3,9;2,4;1,6;5,2;1,4;5,2;2,1;2,7");
-		Text btnText3 = new Text("5,10;6,6;3,9;8,4;3,6;5,12;1,4;15,2;3,4;9,7");
-		TextField btnText4 = new TextField("1,8;6,4;3,6;4,2;1,4;3,3;1,2;35,1;50,1");
+		Text t = new Text("Vali või sisesta järjend");
+		Text btnText1 = new Text("2,5,13,29,7,1,18,40,49,4");
+		Text btnText2 = new Text("1,10,44,2,12,3,13,20");
+		Text btnText3 = new Text("45,6,16,9,33,28,11,37,49,25");
+		TextField btnText4 = new TextField("1,2,3,4,5,6,7,8,10");
 		btnText4.setMinWidth(300);
 		btnText4.setPadding(new Insets(5,0,5,0));
 
@@ -96,10 +96,10 @@ public class GUI extends Application {
 		hBox.setSpacing(10);
 		vBox.getChildren().add(hBox);
 
-		Button algo1 = new Button("First-Fit");
-		Button algo2 = new Button("Worst-Fit");
-		Button algo3 = new Button("Best-Fit");
-		Button algo4 = new Button("Random-Fit");
+		Button algo1 = new Button("FCFS");
+		Button algo2 = new Button("SSTF");
+		Button algo3 = new Button("LOOK");
+		Button algo4 = new Button("C-SCAN");
 		Button puhasta = new Button("Puhasta väljund");
 
 		hBox.getChildren().addAll(algo1,algo2,algo3,algo4,puhasta);
@@ -133,28 +133,28 @@ public class GUI extends Application {
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.firstFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
 		//worstFit
 		algo2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.worstFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
 		//bestFit
 		algo3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.bestFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
 		//randomFit
 		algo4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.randomFit(sample)),vBox,primaryStage);
+				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
 
@@ -169,7 +169,7 @@ public class GUI extends Application {
 		vBox.getChildren().add(new GridPane());
 		Scene scene = new Scene(vBox, 300, 100);
 
-		primaryStage.setTitle("Kodutöö2");
+		primaryStage.setTitle("Kodutöö3");
 		primaryStage.setScene(scene);
 		primaryStage.setHeight(500);
 		primaryStage.setWidth(1200);
@@ -219,17 +219,6 @@ public class GUI extends Application {
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
-		//The engine that creates individual rows, will also check if one of the functions threw a null
-		//to indicate full memory
-		int index = 1;
-		for (String[] strings : in) {
-			if(strings == null){
-				grid.add(new Text("MÄLU SAI TÄIS, LÕPETAN TÖÖTAMISE"),0,index);
-				break;
-			}
-			addRow(strings,grid, index++);
-		}
-
 		return grid;
 	}
 
@@ -239,48 +228,6 @@ public class GUI extends Application {
 	 *
 	 */
 
-	public static GridPane addRow(String[] in,GridPane grid, int row){
+	public static GridPane createGraph(String[] in,GridPane grid, int row){
 
-		Color[] list = {Color.BLUE, Color.RED, Color.ORANGE, Color.CYAN, Color.PALEGREEN,
-				Color.SALMON, Color.GREEN, Color.YELLOW, Color.LAVENDER, Color.PINK, Color.GRAY};
-		List<String> chars = new ArrayList();
-		String[] cs = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "-"};
-		chars = Arrays.asList(cs);
-
-
-		Text txt1 = new Text(Integer.toString(row));
-		Text txt2 = new Text(in[0]);
-
-
-		txt1.setTextAlignment(TextAlignment.CENTER);
-		txt2.setTextAlignment(TextAlignment.CENTER);
-
-		grid.add(txt1,0,row);
-		grid.add(txt2,1,row);
-
-		//Colors each rectangle as needed
-		for (int i = 0; i < in.length-1; i++) {
-			Rectangle rekt = new Rectangle(20,20,list[chars.indexOf(in[i+1])]);
-			rekt.setStroke(Color.BLACK);
-			Text text = new Text(in[i+1]);
-			text.setTextAlignment(TextAlignment.CENTER);
-			StackPane pane = new StackPane();
-			pane.getChildren().addAll(rekt,text);
-
-			grid.add(pane,i+2,row);
-		}
-		//Semi-legacy, as the functions i wrote automatically fill unused spaces with "-"
-		if(in.length < 51){
-			for (int i = 0; i < 51-in.length; i++) {
-				Rectangle rekt = new Rectangle(20,20,Color.GREY);
-				rekt.setStroke(Color.BLACK);
-				Text text = new Text("-");
-				StackPane pane = new StackPane();
-				pane.getChildren().addAll(rekt,text);
-
-				grid.add(pane,in.length+1+i,row);
-			}
-		}
-		return grid;
-	}
 }
