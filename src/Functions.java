@@ -67,12 +67,12 @@ public class Functions {
         for (int k = 0; k < (in.split(",").length); k++){
             numbrid.add(Integer.parseInt(in.split(",")[k]));
         }
-        int k = 0;
-        while(numbrid.size() != 0){
-            System.out.print(numbrid.get(k));
-            int number = numbrid.get(k);
-            numbrid.remove(k);
+        uued_numbrid.add(10);
+        while(numbrid.size() != 1){
+            int number = numbrid.get(0);
+            numbrid.remove(0);
             int closest = closest(number,numbrid);
+            numbrid.remove(numbrid.indexOf(closest));
             uued_numbrid.add(closest);
             numbrid.add(0,closest);
         }
