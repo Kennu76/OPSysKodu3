@@ -19,10 +19,10 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import jdk.nashorn.internal.ir.FunctionCall;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 
 /**
@@ -38,7 +38,7 @@ import java.util.List;
 
 public class GUI extends Application {
 	//Default value is the 1st example, is set here
-	static String sample = "4,5;2,7;9,2;4,6;7,1;6,4;8,8;3,6;1,10;9,2";
+	static String sample = "2,5,13,29,7,1,18,40,49,4";
 
 	//All the buttons and the neccesary hooks to make the UI work
 	@Override
@@ -60,7 +60,7 @@ public class GUI extends Application {
 		Text btnText1 = new Text("2,5,13,29,7,1,18,40,49,4");
 		Text btnText2 = new Text("1,10,44,2,12,3,13,20");
 		Text btnText3 = new Text("45,6,16,9,33,28,11,37,49,25");
-		TextField btnText4 = new TextField("1,2,3,4,5,6,7,8,10");
+		TextField btnText4 = new TextField("1,10,44,2,12,3,13,20");
 		btnText4.setMinWidth(300);
 		btnText4.setPadding(new Insets(5,0,5,0));
 
@@ -132,28 +132,31 @@ public class GUI extends Application {
 			}
 		});
 
-		//firstFit
+		//FCFS
 		algo1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
+				update(new GridPane(),vBox,primaryStage);
+				update(createNewPane(Functions.FCFS(sample)),vBox,primaryStage);
+
 			}
+
 		});
-		//worstFit
+		//SSTF
 		algo2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
-		//bestFit
+		//LOOK
 		algo3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
 			}
 		});
-		//randomFit
+		//CSCAN
 		algo4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -179,8 +182,9 @@ public class GUI extends Application {
 		primaryStage.show();
 	}
 	public static void main(String[] args) {
-		for(int i :Functions.SSTF("1,10,44,2,12,3,13,20")){
-			System.out.println(i);
+
+		for(int i :Functions.FCFS("1,10,44,2,12,3,13,20")){
+			//System.out.println(i);
 		};
 		launch(args);
 	}
@@ -204,43 +208,64 @@ public class GUI extends Application {
 
 		GridPane grid = new GridPane();
 
-
-		Text txt = new Text("Lisatud\nProtsess");
-		txt.setTextAlignment(TextAlignment.CENTER);
-
-		Text txt1 = new Text("Etapp");
-		txt1.setTextAlignment(TextAlignment.CENTER);
-		grid.add(txt1,0,0);
-		grid.add(txt,1,0);
-
-
-		grid.getColumnConstraints().add(new ColumnConstraints(40));
-		grid.getColumnConstraints().add(new ColumnConstraints(60));
 		//Sets the column headers and width
 		for (int i = 0; i < 50; i++) {
 			Text tempText = new Text(Integer.toString(i));
 			GridPane.setHalignment(tempText, HPos.CENTER);
 
-			grid.add(tempText,i+2,0);
+			grid.add(tempText,i,0);
 			grid.getColumnConstraints().add(new ColumnConstraints(20));
 
 		}
 
-		String[] test = {""};
- 		return createGraph(test,grid);
+		for (int i = 0; i < 50; i++) {
+			Rectangle rekt = new Rectangle(20,20, Color.WHITE);
+			rekt.setStroke(Color.BLACK);
+
+			Text text = null;
+			for (int i1 : Arrays.copyOf(in,in.length-1)) {
+				if(i == i1) {
+					text = new Text("X");
+				}
+			}
+			if(text == null){
+				text = new Text();
+			}
+			text.setTextAlignment(TextAlignment.CENTER);
+			StackPane pane = new StackPane();
+			pane.getChildren().addAll(rekt,text);
+
+			grid.add(pane,i,2);
+		}
+
+ 		return createGraph(in,grid);
 	}
 
 
 
-	public static GridPane createGraph(String[] in,GridPane grid){
-		int column = 20;
+	public static GridPane createGraph(int[] in,GridPane grid){
+		int columnW = 20;
+		int gridLast = 0;
 
-		Line line = new Line(10,0,100,10);
-		Line l2 = new Line(100,10,200,20);
-		grid.add(line,3,2);
+		String s = "";
+		for (int i : in) {
+			s += i + ",";
+		}
+		System.out.println(s);
+
+		for (int i = 1; i < in.length-1; i++) {
+			Line l = new Line(0,0,(in[i+1]-in[i])*columnW,columnW);
+
+			if(in[i] <= in[i+1]){
+				grid.add(l,in[i],i+3);
+			}else{
+				grid.add(l,in[i+1],i+3);
+			}
+
+		}
+
+		grid.add(new Text("Sumaarne teepikkus: " + in[0]),0,20);
 		grid.setAlignment(Pos.CENTER);
-
-		grid.add(l2,8,4);
 		return grid;
 	}
 
