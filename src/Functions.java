@@ -1,4 +1,6 @@
+import java.util.*;
 
+import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 /**
  * Created by alk_ on 10/26/16.
@@ -7,7 +9,16 @@
  */
 public class Functions {
 
-	public static String[][] test(String s){
-		return null;
-	}
+    public static ArrayList FCFS(String in){
+        ArrayList numbrid = new ArrayList();
+
+        for (int k = 0; k < length(in.split(",")); k++){
+            numbrid.add(Integer.parseInt(in.split(",")[k]));
+        }
+
+
+
+        return numbrid;
+    }
+
 }
