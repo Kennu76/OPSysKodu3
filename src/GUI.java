@@ -146,21 +146,25 @@ public class GUI extends Application {
 		algo2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
+				update(new GridPane(),vBox,primaryStage);
+				update(createNewPane(Functions.SSTF(sample)),vBox,primaryStage);
 			}
 		});
 		//LOOK
 		algo3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
+
+                update(new GridPane(),vBox,primaryStage);
+                update(createNewPane(Functions.LOOK(sample)),vBox,primaryStage);
 			}
 		});
 		//CSCAN
 		algo4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
-				update(createNewPane(Functions.test(sample)),vBox,primaryStage);
+                update(new GridPane(),vBox,primaryStage);
+                update(createNewPane(Functions.CSCAN(sample)),vBox,primaryStage);
 			}
 		});
 
@@ -182,10 +186,6 @@ public class GUI extends Application {
 		primaryStage.show();
 	}
 	public static void main(String[] args) {
-
-		for(int i :Functions.LOOK("1,10,44,2,12,3,13,20")){
-			System.out.println(i);
-		};
 		launch(args);
 	}
 
